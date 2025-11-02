@@ -1,0 +1,15 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+
+	Layout = null;
+
+
+
+	var title = Model.Value("heroTitle");
+}
+
+<h1>@title</h1>
+<div>
+	@Html.Raw(Model.Value("heroText"))
+</div>
