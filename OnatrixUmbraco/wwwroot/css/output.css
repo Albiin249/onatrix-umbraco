@@ -19,6 +19,8 @@
     --text-base--line-height: calc(1.5 / 1);
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --default-transition-duration: 150ms;
@@ -30,8 +32,15 @@
     --color-primary: #4F5955;
     --color-main-light: #606966;
     --color-secondary: #D9C3A9;
+    --color-body-text: #535656;
+    --color-body-text-100: #999999;
     --color-border-gray: #EAEAEA;
     --font-poppins: "poppins", sans-serif;
+    --text-rte-xl: 4.375rem;
+    --text-rte-lg: 2.5rem;
+    --text-rte-md: 1.25rem;
+    --text-rte-sm: 1rem;
+    --text-rte-xs: 0.875rem;
   }
 }
 @layer base {
@@ -240,9 +249,6 @@
   .grid {
     display: grid;
   }
-  .table {
-    display: table;
-  }
   .h-\[220px\] {
     height: 220px;
   }
@@ -252,35 +258,32 @@
   .min-h-\[350px\] {
     min-height: 350px;
   }
-  .w-1 {
-    width: calc(var(--spacing) * 1);
-  }
   .w-1\/3 {
     width: calc(1/3 * 100%);
   }
   .w-1\/4 {
     width: calc(1/4 * 100%);
   }
-  .w-5 {
-    width: calc(var(--spacing) * 5);
+  .w-3\/12 {
+    width: calc(3/12 * 100%);
   }
   .w-5\/12 {
     width: calc(5/12 * 100%);
   }
+  .w-8\/12 {
+    width: calc(8/12 * 100%);
+  }
   .w-full {
     width: 100%;
+  }
+  .w-px {
+    width: 1px;
   }
   .max-w-7xl {
     max-width: var(--container-7xl);
   }
-  .flex-shrink {
-    flex-shrink: 1;
-  }
   .flex-shrink-0 {
     flex-shrink: 0;
-  }
-  .border-collapse {
-    border-collapse: collapse;
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
@@ -288,14 +291,14 @@
   .cursor-pointer {
     cursor: pointer;
   }
-  .resize {
-    resize: both;
-  }
   .grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   .flex-col {
     flex-direction: column;
+  }
+  .flex-row {
+    flex-direction: row;
   }
   .flex-wrap {
     flex-wrap: wrap;
@@ -359,6 +362,9 @@
   }
   .bg-\[\@sectionColor\] {
     background-color: @sectionColor;
+  }
+  .bg-border-gray {
+    background-color: var(--color-border-gray);
   }
   .bg-neutral {
     background-color: var(--color-neutral);
@@ -442,6 +448,12 @@
   .text-\[\.875rem\] {
     font-size: .875rem;
   }
+  .text-\[0\.875rem\] {
+    font-size: 0.875rem;
+  }
+  .text-\[1\.375rem\] {
+    font-size: 1.375rem;
+  }
   .text-\[2\.5rem\] {
     font-size: 2.5rem;
   }
@@ -451,6 +463,21 @@
   .text-\[10px\] {
     font-size: 10px;
   }
+  .text-rte-lg {
+    font-size: var(--text-rte-lg);
+  }
+  .text-rte-md {
+    font-size: var(--text-rte-md);
+  }
+  .text-rte-sm {
+    font-size: var(--text-rte-sm);
+  }
+  .text-rte-xl {
+    font-size: var(--text-rte-xl);
+  }
+  .text-rte-xs {
+    font-size: var(--text-rte-xs);
+  }
   .leading-none {
     --tw-leading: 1;
     line-height: 1;
@@ -459,9 +486,23 @@
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
+  .font-light {
+    --tw-font-weight: var(--font-weight-light);
+    font-weight: var(--font-weight-light);
+  }
+  .font-normal {
+    --tw-font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-normal);
+  }
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
+  }
+  .text-body-text {
+    color: var(--color-body-text);
+  }
+  .text-body-text-100 {
+    color: var(--color-body-text-100);
   }
   .text-gray-600 {
     color: var(--color-gray-600);
@@ -484,16 +525,9 @@
   .no-underline {
     text-decoration-line: none;
   }
-  .underline {
-    text-decoration-line: underline;
-  }
   .shadow-sm {
     --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
   .transition-colors {
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
@@ -506,24 +540,10 @@
       border-right-width: 1px;
     }
   }
-  .hover\:text-primary {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-primary);
-      }
-    }
-  }
   .hover\:text-secondary {
     &:hover {
       @media (hover: hover) {
         color: var(--color-secondary);
-      }
-    }
-  }
-  .hover\:text-white-100 {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-white-100);
       }
     }
   }
@@ -539,6 +559,27 @@ body {
 }
 .current a {
   color: var(--color-secondary);
+}
+.rte-ul {
+  margin-top: calc(var(--spacing) * 3);
+  list-style-type: disc;
+  padding-left: calc(var(--spacing) * 5);
+}
+.rte-ul li {
+  margin-bottom: calc(var(--spacing) * 3);
+  font-size: var(--text-rte-xs);
+  color: var(--color-body-text);
+}
+.rte-ul li::marker {
+  color: var(--color-secondary);
+}
+.rte p {
+  margin-bottom: calc(var(--spacing) * 3);
+}
+img {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
 }
 @property --tw-rotate-x {
   syntax: "*";
@@ -638,11 +679,6 @@ body {
   inherits: false;
   initial-value: 0 0 #0000;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -668,7 +704,6 @@ body {
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
-      --tw-outline-style: solid;
     }
   }
 }
