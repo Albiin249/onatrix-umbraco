@@ -1,0 +1,26 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.BrandSection)Model.Content;
+    var brands = content.Brands;
+}
+
+
+<section class="relative py-[8rem] max-w-7xl mx-auto px-4">
+ 
+    <div class="flex items-center justify-between gap-8 flex-wrap">
+        @if (brands != null && brands.Any())
+        {
+            foreach (var brand in brands)
+            {
+                var brandContent = (ContentModels.BrandItem)brand.Content;
+                var image = brandContent.BrandImage; 
+                if (image != null)
+                {
+                    <img src="@image.Url()" alt="@image.Name" class="max-h-16 object-contain" />
+                }
+            }
+        }
+    </div>
+
+</section>
