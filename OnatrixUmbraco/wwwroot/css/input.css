@@ -53,6 +53,6 @@ body {
     @apply mb-3;
 }
 
-img {
+.service-detail img {
     @apply w-full h-auto object-cover;
 }

@@ -501,6 +501,12 @@
   .py-\[5rem\] {
     padding-block: 5rem;
   }
+  .py-\[7rem\] {
+    padding-block: 7rem;
+  }
+  .py-\[8rem\] {
+    padding-block: 8rem;
+  }
   .py-\[11rem\] {
     padding-block: 11rem;
   }
@@ -743,7 +749,7 @@ body {
 .rte p {
   margin-bottom: calc(var(--spacing) * 3);
 }
-img {
+.service-detail img {
   height: auto;
   width: 100%;
   object-fit: cover;
