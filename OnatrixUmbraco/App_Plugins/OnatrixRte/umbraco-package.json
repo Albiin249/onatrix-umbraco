@@ -17,6 +17,35 @@
           "label": "Paragraphs",
           "items": [
             {
+              "label": "XXL - 70",
+              "items": [
+                {
+                  "label": "Light",
+                  "data": {
+                    "tag": "p",
+                    "class": "text-rte-xxl font-light"
+                  },
+                  "appearance": {}
+                },
+                {
+                  "label": "Normal",
+                  "data": {
+                    "tag": "p",
+                    "class": "text-rte-xxl font-regular"
+                  },
+                  "appearance": {}
+                },
+                {
+                  "label": "Bold",
+                  "data": {
+                    "tag": "p",
+                    "class": "text-rte-xxl font-bold"
+                  },
+                  "appearance": {}
+                }
+              ]
+            },
+            {
               "label": "XL - 70",
               "items": [
                 {
@@ -93,6 +122,39 @@
                   "data": {
                     "tag": "p",
                     "class": "text-rte-md font-bold"
+                  }
+                }
+              ]
+            },
+            {
+              "label": "MS - 20",
+              "items": [
+                {
+                  "label": "Light",
+                  "data": {
+                    "tag": "p",
+                    "class": "text-rte-ms font-light"
+                  }
+                },
+                {
+                  "label": "Normal",
+                  "data": {
+                    "tag": "p",
+                    "class": "text-rte-ms font-regular"
+                  }
+                },
+                {
+                  "label": "Bold",
+                  "data": {
+                    "tag": "p",
+                    "class": "text-rte-ms font-bold"
+                  }
+                },
+                {
+                  "label": "Semi Bold",
+                  "data": {
+                    "tag": "p",
+                    "class": "text-rte-ms font-semibold"
                   }
                 }
               ]
@@ -199,6 +261,14 @@
           "data": {
             "tag": "span",
             "class": "text-body-text-100"
+          },
+          "appearance": { "style": "background-color:#999999; color:#fff; padding:5px;" }
+        },
+        {
+          "label": "Body-Neutral",
+          "data": {
+            "tag": "span",
+            "class": "text-neutral"
           },
           "appearance": { "style": "background-color:#999999; color:#fff; padding:5px;" }
         }
