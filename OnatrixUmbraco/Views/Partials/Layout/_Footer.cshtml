@@ -1,0 +1,12 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+	var rootContent = Umbraco.ContentAtRoot();
+	var siteSettings = rootContent.OfType<SiteSettings>().FirstOrDefault();
+}
+
+<div class="bg-dark">
+	<div class="max-w-7xl mx-auto px-4">
+		<p class="rte">@siteSettings?.Footer</p>
+	</div>
+</div>
