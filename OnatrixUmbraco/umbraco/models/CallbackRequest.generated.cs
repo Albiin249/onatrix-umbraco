@@ -55,7 +55,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("callbackRequestEmail")]
-		public virtual string CallbackRequestEmail => this.Value<string>(_publishedValueFallback, "callbackRequestEmail");
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString CallbackRequestEmail => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "callbackRequestEmail");
 
 		///<summary>
 		/// Name
@@ -63,7 +63,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("callbackRequestName")]
-		public virtual string CallbackRequestName => this.Value<string>(_publishedValueFallback, "callbackRequestName");
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString CallbackRequestName => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "callbackRequestName");
 
 		///<summary>
 		/// Option
@@ -71,7 +71,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("callbackRequestOption")]
-		public virtual string CallbackRequestOption => this.Value<string>(_publishedValueFallback, "callbackRequestOption");
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString CallbackRequestOption => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "callbackRequestOption");
 
 		///<summary>
 		/// Phone
@@ -79,6 +79,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("callbackRequestPhone")]
-		public virtual string CallbackRequestPhone => this.Value<string>(_publishedValueFallback, "callbackRequestPhone");
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString CallbackRequestPhone => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "callbackRequestPhone");
 	}
 }
