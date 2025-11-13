@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>About Page</summary>
 	[PublishedModel("aboutPage")]
-	public partial class AboutPage : PublishedContentModel
+	public partial class AboutPage : PublishedContentModel, IPageHeader
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -56,5 +56,29 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("sections")]
 		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel Sections => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "sections");
+
+		///<summary>
+		/// Picture
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("tinaPicture")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString TinaPicture => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "tinaPicture");
+
+		///<summary>
+		/// Text 
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("tinaText")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString TinaText => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "tinaText");
+
+		///<summary>
+		/// Page Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("pageTitle")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString PageTitle => global::Umbraco.Cms.Web.Common.PublishedModels.PageHeader.GetPageTitle(this, _publishedValueFallback);
 	}
 }
