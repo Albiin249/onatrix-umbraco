@@ -1,8 +1,10 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<IContactProject>
-
-<section class="relative pt-16 bg-white-100">
+@{
+    var bgClass = Model.Id == 1063 ? "bg-neutral" : "bg-white-100";
+}
+<section class="relative pt-16 @bgClass">
     <div class="max-w-7xl mx-auto px-4 flex items-center">
-
+        
         <div class="relative w-full">
             @if (Model.ContactBackgroundImage != null)
             {
