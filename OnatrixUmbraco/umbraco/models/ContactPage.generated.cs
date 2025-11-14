@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Contact Page</summary>
 	[PublishedModel("contactPage")]
-	public partial class ContactPage : PublishedContentModel, IPageHeader
+	public partial class ContactPage : PublishedContentModel, IContactProject, IPageHeader
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -56,6 +56,54 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("sections")]
 		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel Sections => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "sections");
+
+		///<summary>
+		/// Contact Background Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("contactBackgroundImage")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops ContactBackgroundImage => global::Umbraco.Cms.Web.Common.PublishedModels.ContactProject.GetContactBackgroundImage(this, _publishedValueFallback);
+
+		///<summary>
+		/// Contact Email
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("contactEmail")]
+		public virtual string ContactEmail => global::Umbraco.Cms.Web.Common.PublishedModels.ContactProject.GetContactEmail(this, _publishedValueFallback);
+
+		///<summary>
+		/// Contact Office Location
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("contactOfficeLocation")]
+		public virtual string ContactOfficeLocation => global::Umbraco.Cms.Web.Common.PublishedModels.ContactProject.GetContactOfficeLocation(this, _publishedValueFallback);
+
+		///<summary>
+		/// Contact Person Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("contactPersonImage")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops ContactPersonImage => global::Umbraco.Cms.Web.Common.PublishedModels.ContactProject.GetContactPersonImage(this, _publishedValueFallback);
+
+		///<summary>
+		/// Contact Phone
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("contactPhone")]
+		public virtual string ContactPhone => global::Umbraco.Cms.Web.Common.PublishedModels.ContactProject.GetContactPhone(this, _publishedValueFallback);
+
+		///<summary>
+		/// Contact Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("contactTitle")]
+		public virtual string ContactTitle => global::Umbraco.Cms.Web.Common.PublishedModels.ContactProject.GetContactTitle(this, _publishedValueFallback);
 
 		///<summary>
 		/// Page Title
