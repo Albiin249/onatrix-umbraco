@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Service Detail</summary>
 	[PublishedModel("serviceDetail")]
-	public partial class ServiceDetail : PublishedContentModel, IContactProject, IPageHeader
+	public partial class ServiceDetail : PublishedContentModel, IContactProject, IPageHeader, IServiceForm
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -136,5 +136,29 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("pageTitle")]
 		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString PageTitle => global::Umbraco.Cms.Web.Common.PublishedModels.PageHeader.GetPageTitle(this, _publishedValueFallback);
+
+		///<summary>
+		/// Email
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("formEmail")]
+		public virtual string FormEmail => global::Umbraco.Cms.Web.Common.PublishedModels.ServiceForm.GetFormEmail(this, _publishedValueFallback);
+
+		///<summary>
+		/// Name
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("formName")]
+		public virtual string FormName => global::Umbraco.Cms.Web.Common.PublishedModels.ServiceForm.GetFormName(this, _publishedValueFallback);
+
+		///<summary>
+		/// Question
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("formQuestion")]
+		public virtual string FormQuestion => global::Umbraco.Cms.Web.Common.PublishedModels.ServiceForm.GetFormQuestion(this, _publishedValueFallback);
 	}
 }
