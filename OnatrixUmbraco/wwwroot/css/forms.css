@@ -3,7 +3,7 @@
 }
 
 .form-btn-service {
-    @apply w-1/2 sm:w-3/4 md:w-1/8 bg-primary text-accent text-center font-bold rounded-md cursor-pointer select-none py-3 px-12 sm:text-lg md:text-[1.125rem];
+    @apply flex items-center justify-center w-1/2 sm:w-3/4 md:w-1/8 bg-primary text-accent text-center font-bold rounded-md cursor-pointer select-none py-3 px-12 sm:text-lg md:text-[1.125rem];
 }
 
 .input-validation-error {
