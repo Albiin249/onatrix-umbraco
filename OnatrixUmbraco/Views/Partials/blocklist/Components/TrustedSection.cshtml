@@ -1,0 +1,27 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.TrustedSection)Model.Content;
+}
+
+
+<section class="flex flex-col items-center justify-center pt-[7rem]">
+
+    <div class="flex items-center justify-center container mx-auto px-4 relative z-10 max-w-7xl">
+        <div class="w-6/12 flex flex-col gap-8 items-center justify-center">
+            <h1 class="text-[4.5rem] text-primary font-bold leading-none">@content.TrustedTitle</h1>
+            <div class="rte">@Html.Raw(content.TrustedText)</div>
+            @if (content.TrustedLink != null)
+            {
+                <a class="bg-primary font-bold text-white py-3 px-10 no-underline rounded cursor-pointer hover:text-secondary" href="@content.TrustedLink.Url">@content.TrustedLink.Name</a>
+            }
+        </div>
+    </div>
+
+    <div class="pt-16 pb-0">
+        @if (content.TrustedImage != null)
+        {
+            <img src="@content.TrustedImage.Url()" class="" />
+        }
+    </div>
+</section>
