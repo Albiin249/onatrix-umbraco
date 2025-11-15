@@ -18,14 +18,14 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>Callback Request</summary>
-	[PublishedModel("callbackRequest")]
-	public partial class CallbackRequest : PublishedContentModel
+	/// <summary>Contact Form Request</summary>
+	[PublishedModel("contactFormRequest")]
+	public partial class ContactFormRequest : PublishedContentModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
-		public new const string ModelTypeAlias = "callbackRequest";
+		public new const string ModelTypeAlias = "contactFormRequest";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
@@ -34,14 +34,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 			=> PublishedModelUtility.GetModelContentType(contentTypeCache, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<CallbackRequest, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<ContactFormRequest, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(contentTypeCache), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public CallbackRequest(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
+		public ContactFormRequest(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -54,31 +54,31 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("callbackRequestEmail")]
-		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString CallbackRequestEmail => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "callbackRequestEmail");
+		[ImplementPropertyType("contactFormEmail")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString ContactFormEmail => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "contactFormEmail");
 
 		///<summary>
-		/// Callback RequestName
+		/// Name
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("callbackRequestName")]
-		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString CallbackRequestName => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "callbackRequestName");
+		[ImplementPropertyType("contactFormName")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString ContactFormName => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "contactFormName");
 
 		///<summary>
 		/// Option
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("callbackRequestOption")]
-		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString CallbackRequestOption => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "callbackRequestOption");
+		[ImplementPropertyType("contactFormOption")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString ContactFormOption => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "contactFormOption");
 
 		///<summary>
 		/// Phone
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("callbackRequestPhone")]
-		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString CallbackRequestPhone => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "callbackRequestPhone");
+		[ImplementPropertyType("contactFormPhone")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString ContactFormPhone => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "contactFormPhone");
 	}
 }
