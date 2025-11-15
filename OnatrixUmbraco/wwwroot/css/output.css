@@ -48,6 +48,7 @@
     --color-body-text-100: #999999;
     --color-border-gray: #EAEAEA;
     --color-border-400: #C7C8C9;
+    --color-placeholder-text: #AAAAAA;
     --font-poppins: "poppins", sans-serif;
     --text-rte-xxl: 6.25rem;
     --text-rte-xl: 4.375rem;
@@ -609,6 +610,9 @@
   .text-\[1\.875rem\] {
     font-size: 1.875rem;
   }
+  .text-\[1\.5625rem\] {
+    font-size: 1.5625rem;
+  }
   .text-\[2\.5rem\] {
     font-size: 2.5rem;
   }
@@ -679,6 +683,9 @@
   }
   .text-neutral {
     color: var(--color-neutral);
+  }
+  .text-placeholder-text {
+    color: var(--color-placeholder-text);
   }
   .text-primary {
     color: var(--color-primary);
@@ -767,6 +774,33 @@
   color: var(--color-primary);
   -webkit-user-select: none;
   user-select: none;
+}
+.form-btn-service {
+  width: calc(1/2 * 100%);
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary);
+  padding-inline: calc(var(--spacing) * 12);
+  padding-block: calc(var(--spacing) * 3);
+  text-align: center;
+  --tw-font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent);
+  -webkit-user-select: none;
+  user-select: none;
+  @media (width >= 40rem) {
+    width: calc(3/4 * 100%);
+  }
+  @media (width >= 40rem) {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  @media (width >= 48rem) {
+    width: calc(1/8 * 100%);
+  }
+  @media (width >= 48rem) {
+    font-size: 1.125rem;
+  }
 }
 .input-validation-error {
   border-color: var(--color-red-500);

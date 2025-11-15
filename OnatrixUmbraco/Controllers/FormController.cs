@@ -33,4 +33,22 @@ public class FormController(IUmbracoContextAccessor umbracoContextAccessor, IUmb
 
         return RedirectToCurrentUmbracoPage();
     }
+
+    public IActionResult HandleServiceDetailForm(ServiceDetailFormViewModel model)
+    {
+        if (!ModelState.IsValid)
+        {
+            return CurrentUmbracoPage();
+        }
+
+        var result = _formSubmissions.SaveServiceDetailRequest(model);
+        if (!result)
+        {
+            TempData["FormError"] = "Something went wrong while submitting your question. Please try again later.";
+            return RedirectToCurrentUmbracoPage();
+        }
+        TempData["FormSuccess"] = "Thank you! Your question has been received and we will get back to you soon.";
+
+        return RedirectToCurrentUmbracoPage();
+    }
 }
