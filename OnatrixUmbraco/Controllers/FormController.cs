@@ -51,4 +51,22 @@ public class FormController(IUmbracoContextAccessor umbracoContextAccessor, IUmb
 
         return RedirectToCurrentUmbracoPage();
     }
+
+    public IActionResult HandleHelpForm(HelpFormViewModel model)
+    {
+        if (!ModelState.IsValid)
+        {
+            return CurrentUmbracoPage();
+        }
+
+        var result = _formSubmissions.SaveHelpRequest(model);
+        if (!result)
+        {
+            TempData["FormError"] = "Something went wrong while submitting your email. Please try again later.";
+            return RedirectToCurrentUmbracoPage();
+        }
+        TempData["FormSuccess"] = "Thank you! We will contact you shortly.";
+
+        return RedirectToCurrentUmbracoPage();
+    }
 }
