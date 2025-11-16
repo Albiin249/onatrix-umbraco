@@ -58,4 +58,27 @@ public class FormSubmissionService(IContentService contentService)
             return false;
         }
     }
+
+    public bool SaveHelpRequest(HelpFormViewModel model)
+    {
+        try
+        {
+            var container = _contentService.GetRootContent().FirstOrDefault(x => x.ContentType.Alias == "formSubmissions");
+
+            if (container == null)
+                return false;
+
+            var requestName = $"{DateTime.Now:yyyy-MM-dd HH:mm} - {model.Email}";
+            var request = _contentService.Create(requestName, container, "helpRequest");
+
+            request.SetValue("helpRequestEmail", model.Email);
+
+            var saveResult = _contentService.Save(request);
+            return saveResult.Success;
+        }
+        catch (Exception ex)
+        {
+            return false;
+        }
+    }
 }

@@ -1,0 +1,27 @@
+﻿@using Umbraco.Cms.Core.Models.Blocks
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<BlockListItem>
+
+@{
+    var content = (ContentModels.HelpRequest)Model.Content;
+    var model = new OnatrixUmbraco.ViewModels.HelpFormViewModel();
+}
+
+<div class="p-4 mt-4 bg-primary rounded flex flex-col gap-5">
+    <h4 class="font-bold text-rte-md text-white mt-4">@content.HelpRequestTitle</h4>
+    <p class="text-xs text-neutral">@content.HelpRequestBody</p>
+
+    @using (Html.BeginUmbracoForm("HandleHelpForm", "Form", FormMethod.Post, new { id = "helpForm" }))
+    {
+        @Html.AntiForgeryToken()
+       
+        <div class="relative">
+            <input type="email" name="Email" placeholder="E-mail address" class="mb-4 bg-neutral w-full p-3 italic text-notel rounded" required />
+            <i class="fa-regular fa-envelope absolute text-primary right-3 bottom-1/2"></i>
+        </div>
+       
+
+        <button type="submit" class="hidden"></button>
+
+    }
+</div>
