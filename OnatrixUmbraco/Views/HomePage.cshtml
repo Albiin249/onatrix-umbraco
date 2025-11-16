@@ -1,15 +1,8 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<HomePage>
 @{
 
-	Layout = null;
-
-
-
-	var title = Model.Value("heroTitle");
+	Layout = "mainLayout.cshtml";
 }
 
-<h1>@title</h1>
-<div>
-	@Html.Raw(Model.Value("heroText"))
-</div>
+@Html.GetBlockListHtml(Model.Sections)

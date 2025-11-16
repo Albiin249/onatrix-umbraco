@@ -1,3 +1,6 @@
+using OnatrixUmbraco.Services;
+using Umbraco.Cms.Web.Common.PublishedModels;
+
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 builder.CreateUmbracoBuilder()
@@ -6,6 +9,7 @@ builder.CreateUmbracoBuilder()
     .AddComposers()
     .Build();
 
+builder.Services.AddScoped<FormSubmissionService>();
 WebApplication app = builder.Build();
 
 await app.BootUmbracoAsync();

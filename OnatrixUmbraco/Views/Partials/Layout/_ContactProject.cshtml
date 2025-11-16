@@ -1,0 +1,40 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<IContactProject>
+@{
+    var bgClass = Model.Id == 1063 ? "bg-neutral" : "bg-white-100";
+}
+<section class="relative pt-16 @bgClass">
+    <div class="max-w-7xl mx-auto px-4 flex items-center">
+        
+        <div class="relative w-full">
+            @if (Model.ContactBackgroundImage != null)
+            {
+                <img src="@Model.ContactBackgroundImage.Url()" alt="Background" class="absolute inset-0 w-full h-full object-cover left-10 sm:left-0" />
+            }
+
+            @if (Model.ContactPersonImage != null)
+            {
+                <img src="@Model.ContactPersonImage.Url()" alt="Contact Person" class="relative left-10 sm:left-0" />
+            }
+        </div>
+
+        <div class="pl-[10rem]">
+            <h2 class="text-rte-s sm:text-rte-lg font-bold text-primary">@Model.ContactTitle</h2>
+
+            <div class="pt-5 ">
+                <div class="flex flex-col justify-center">
+                    <span class="text-primary text-rte-xs font-semibold"><i class="fa-solid fa-location-dot text-secondary"></i> Office Location</span>
+                    <p class="pl-5 pt-.5 text-body-text text-rte-xs ">@Model.ContactOfficeLocation</p>
+                </div>
+                <div class="flex flex-col justify-center py-3">
+                    <span class="text-primary text-rte-xs font-semibold"><i class="fa-solid fa-phone text-secondary"></i> Phone Number</span>
+                    <p class="pl-5 pt-.5 text-body-text text-rte-xs">@Model.ContactPhone</p>
+                </div>
+                <div class="flex flex-col justify-center py-3">
+                    <span class="text-primary text-rte-xs font-semibold"><i class="fa-solid fa-envelope text-secondary"></i> E-mail address</span>
+                    <p class="pl-5 pt-.5 text-body-text text-rte-xs">@Model.ContactEmail</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
