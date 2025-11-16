@@ -3,7 +3,7 @@
 @{
 	var rootContent = Umbraco.ContentAtRoot();
 	var siteSettings = rootContent.OfType<SiteSettings>().FirstOrDefault();
-	var contactAddress = siteSettings?.ContactAddress ?? "Ingen adress angiven";
+	var contactAddress = siteSettings?.ContactAddress?.ToString() ?? "Ingen adress angiven";
 }
 
 

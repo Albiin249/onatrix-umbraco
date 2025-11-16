@@ -4,4 +4,43 @@
 	Layout = "mainLayout.cshtml";
 }
 <partial name="Partials/Layout/_PageHeader" model="(IPageHeader)Model" />
+
+
+<section class="py-[8rem] tina-section">
+    <div class="max-w-7xl mx-auto px-4 flex gap-10">
+
+        <div class="flex flex-col w-4/12">
+            <div class="rte">
+                @Html.Raw(Model.TinaPicture)
+            </div>
+        </div>
+
+        <div class="flex flex-col w-8/12">
+            <div class="rte">
+                @Html.Raw(Model.TinaText)
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-[8rem] kevin-sector relative">
+
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex flex-col w-full">
+            <div class="rte">
+                @Html.Raw(Model.KevinRecension)
+            </div>
+        </div>
+    </div>
+
+    @if (Model.KevinPic != null)
+    {
+        <div class="absolute top-0 right-5 h-full flex items-start">
+            <img src="@Model.KevinPic.Url()" class="h-auto max-h-full" />
+        </div>
+    }
+
+</section>
+
 @Html.GetBlockListHtml(Model.Sections)
+
+<partial name="Partials/Layout/_ContactProject" />

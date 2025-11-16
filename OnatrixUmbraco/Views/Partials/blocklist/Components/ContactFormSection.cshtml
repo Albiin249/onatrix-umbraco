@@ -1,0 +1,48 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels
+@using OnatrixUmbraco.ViewModels
+
+@{
+    var content = (ContentModels.ContactFormSection)Model.Content;
+    var settings = Model.Settings as ContentModels.ContactFormSettings;
+
+    var formVM = new CallbackFormViewModel
+            {
+                Options = settings?.ContactFormOptions ?? []
+            };
+}
+
+<section class="relative">
+    @if (content.ContactSectionBackgroundImage != null)
+    {
+        <img class="w-full h-full object-cover" src="@content.ContactSectionBackgroundImage.Url()" />
+    }
+
+    <div class="max-w-7xl mx-auto px-4 flex flex-col w-full  bg-neutral shadow-lg z-10 -mt-120 z-10 relative ">
+        <div class="flex flex-col items-center w-full">
+            <div class="flex flex-col items-center justify-center w-2/4 p-16">
+                <p> @content.ContactSectionDescription</p>
+                <p> @content.ContactSectionTitle</p>
+
+                <div class="rte">
+                    @Html.Raw(content.ContactSectionBody)
+                </div>
+            </div>
+        </div>
+
+        <partial name="Partials/Forms/_ContactForm" model="formVM" />
+
+        @if (TempData["FormSuccess"] != null)
+        {
+            <div class="bg-green-50 text-green-700 p-4 mx-[2rem] mb-4 rounded-md flex items-center justify-center w1/4">
+                @TempData["FormSuccess"]
+            </div>
+        }
+        else if (TempData["FormError"] != null)
+        {
+            <div class="bg-red-50 text-red-700 p-4 mx-[2rem] mb-4 rounded-md flex items-center justify-center w1/4">
+                @TempData["FormError"]
+            </div>
+        }
+    </div>
+</section>

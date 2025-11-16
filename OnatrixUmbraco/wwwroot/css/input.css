@@ -1,4 +1,6 @@
 ﻿@import "tailwindcss";
+@import "./forms.css";
+@import "./swiper.css";
 
 @theme {
     --color-neutral: #ffffff;
@@ -15,15 +17,18 @@
     --color-notel: #9C9EA6;
     --color-border-gray: #EAEAEA;
     --color-border-400: #C7C8C9;
+    --color-border-300: #EBEBEB; 
+    --color-placeholder-text: #AAAAAA;
 
     --font-poppins: "poppins", sans-serif;
 
+    --text-rte-xxl: 6.25rem;
     --text-rte-xl: 4.375rem;
     --text-rte-lg: 2.5rem;
     --text-rte-md: 1.25rem;
+    --text-rte-ms: 1.125rem;
     --text-rte-sm: 1rem;
     --text-rte-xs: 0.875rem;
-
 }
 body {
     @apply font-poppins;
@@ -52,6 +57,6 @@ body {
     @apply mb-3;
 }
 
-img {
+.service-detail img {
     @apply w-full h-auto object-cover;
 }

@@ -1,7 +1,9 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+﻿@using OnatrixUmbraco.ViewModels
+@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ServiceDetail>
 @{
 	Layout = "mainLayout.cshtml";
+	var formModel = new ServiceDetailFormViewModel();
 }
 <partial name="Partials/Layout/_PageHeader" model="(IPageHeader)Model" />
 
@@ -18,10 +20,30 @@
 
 			</div>
 
-			<div class="w-8/12 flex flex-col gap-2">
+			<div class="w-8/12 flex flex-col gap-2 service-detail">
 				<div class="rte">@Html.Raw(Model.ServiceDetailBody)</div>
 			</div>
 
 		</div>
 	</div>
 </section>
+
+<partial name="Partials/Forms/_ServiceDetailForm" model="formModel"/>
+
+<div class="max-w-7xl mx-auto px-4 flex items-center justify-center">
+	@if (TempData["FormSuccess"] != null)
+	{
+		<div class="bg-green-50 text-green-700 p-4 mx-[2rem] mb-4 rounded-md">
+			@TempData["FormSuccess"]
+		</div>
+	}
+	else if (TempData["FormError"] != null)
+	{
+		<div class="bg-red-50 text-red-700 p-4 mx-[2rem] mb-4 rounded-md">
+			@TempData["FormError"]
+		</div>
+	}
+</div>
+
+
+<partial name="Partials/Layout/_ContactProject" />
