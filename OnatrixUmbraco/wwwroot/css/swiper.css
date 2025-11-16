@@ -1,5 +1,5 @@
 ﻿.custom-pagination {
-    @apply !hidden md:flex md:justify-center md:gap-4 md:py-2 md:mt-6;
+    @apply !hidden md:!flex md:justify-center md:gap-4 md:py-2 md:mt-6;
 }
 
 .custom-prev,

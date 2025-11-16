@@ -8,17 +8,17 @@
         <div class="relative w-full">
             @if (Model.ContactBackgroundImage != null)
             {
-                <img src="@Model.ContactBackgroundImage.Url()" alt="Background" class="absolute inset-0 w-full h-full object-cover" />
+                <img src="@Model.ContactBackgroundImage.Url()" alt="Background" class="absolute inset-0 w-full h-full object-cover left-10 sm:left-0" />
             }
 
             @if (Model.ContactPersonImage != null)
             {
-                <img src="@Model.ContactPersonImage.Url()" alt="Contact Person" class="relative" />
+                <img src="@Model.ContactPersonImage.Url()" alt="Contact Person" class="relative left-10 sm:left-0" />
             }
         </div>
 
         <div class="pl-[10rem]">
-            <h2 class="text-rte-lg font-bold text-primary">@Model.ContactTitle</h2>
+            <h2 class="text-rte-s sm:text-rte-lg font-bold text-primary">@Model.ContactTitle</h2>
 
             <div class="pt-5 ">
                 <div class="flex flex-col justify-center">

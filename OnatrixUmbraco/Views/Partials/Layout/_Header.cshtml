@@ -30,7 +30,7 @@
 
 		@if (logo != null) 
 		{
-			<a href="/" class="flex-shrink-0">
+			<a href="/" class="flex-shrink-0 ">
 				<img src="@logo.Url()" alt="Onatrix" />
 			</a>
 		}
@@ -43,7 +43,7 @@
 
 		@if (selection?.Length > 0)
 		{
-			<ul class="flex items-center gap-16">
+			<ul class="flex items-center gap-5 sm:gap-16">
 				@foreach (var item in selection)
 				{
 					<li class="@(item.IsAncestorOrSelf(Model) ? "current" : null)">
@@ -53,7 +53,7 @@
 			</ul>
 		}
 
-		<div class="flex items-center">
+		<div class="hidden sm:flex items-center ">
 			<i class="fa-solid fa-magnifying-glass text-lg text-primary cursor-pointer"></i>
 		</div>
 

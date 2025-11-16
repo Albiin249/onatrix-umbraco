@@ -22,9 +22,14 @@
         </div>
     </div>
 </section>
-<section class="py-[8rem] kevin-sector relative">
-
-    <div class="max-w-7xl mx-auto px-4">
+<section class="sm:py-[8rem] kevin-sector relative">
+    @if (Model.KevinPic != null)
+    {
+        <div class="sm:absolute top-0 right-5 h-full flex items-start">
+            <img src="@Model.KevinPic.Url()" class="h-auto max-h-full" />
+        </div>
+    }
+    <div class="max-w-7xl mx-auto px-4 pt-16 sm:pt-0">
         <div class="flex flex-col w-full">
             <div class="rte">
                 @Html.Raw(Model.KevinRecension)
@@ -32,12 +37,7 @@
         </div>
     </div>
 
-    @if (Model.KevinPic != null)
-    {
-        <div class="absolute top-0 right-5 h-full flex items-start">
-            <img src="@Model.KevinPic.Url()" class="h-auto max-h-full" />
-        </div>
-    }
+   
 
 </section>
 
